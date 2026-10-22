@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b111b">
+  <meta name="description" content="测试当前设备与此 Docker 服务器之间的延迟、下载和上传速度。">
+  <title>网络测速 · Speedtest</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="网络测速首页"><span class="brand-mark">↗</span><span>NET<span class="brand-light">PULSE</span></span></a>
+      <div class="top-status"><span class="status-dot"></span><span>服务器在线</span></div>
+    </header>
+
+    <main>
+      <div class="eyebrow"><span class="eyebrow-line"></span> NETWORK DIAGNOSTICS <span class="eyebrow-line"></span></div>
+      <h1>测量你的<span>连接速度</span></h1>
+      <p class="intro">测试此设备与 Docker 服务器之间的真实传输表现。无需安装，点击即可开始。</p>
+
+      <section class="identity" aria-label="连接信息">
+        <div class="identity-item"><span class="item-icon">◎</span><div><span class="label">服务器识别的 IP</span><strong id="ip">正在获取…</strong></div></div>
+        <div class="identity-divider"></div>
+        <div class="identity-item"><span class="item-icon">◈</span><div><span class="label">测试服务器</span><strong id="server">当前站点</strong></div></div>
+      </section>
+
+      <section class="speed-panel" aria-label="测速结果">
+        <div class="panel-head"><span>实时测速</span><span class="panel-live"><i></i> LIVE TEST</span></div>
+        <div class="gauge-wrap">
+          <div class="gauge" id="gauge"><div class="gauge-inner"><div class="gauge-label" id="phase">准备就绪</div><div class="gauge-number" id="main-speed">—</div><div class="gauge-unit" id="main-unit">Mbps</div></div></div>
+        </div>
+        <div class="progress-track"><div class="progress-fill" id="progress"></div></div>
+        <div class="progress-text" id="message" role="status" aria-live="polite">点击下方按钮，开始完整测试</div>
+        <button id="start" type="button"><span id="button-text">开始测速</span><span aria-hidden="true">→</span></button>
+      </section>
+
+      <section class="metrics" aria-label="测试数据">
+        <article class="metric"><div class="metric-top"><span class="metric-icon download">↓</span><span class="metric-label">下载速度</span></div><div class="metric-value"><strong id="download">—</strong><span>Mbps</span></div><div class="metric-note">服务器 → 你的设备</div></article>
+        <article class="metric"><div class="metric-top"><span class="metric-icon upload">↑</span><span class="metric-label">上传速度</span></div><div class="metric-value"><strong id="upload">—</strong><span>Mbps</span></div><div class="metric-note">你的设备 → 服务器</div></article>
+        <article class="metric"><div class="metric-top"><span class="metric-icon latency">⌁</span><span class="metric-label">延迟</span></div><div class="metric-value"><strong id="ping">—</strong><span>ms</span></div><div class="metric-note">往返响应时间 · 抖动 <span id="jitter">—</span> ms</div></article>
+      </section>
+
+      <p class="footnote">测速会传输约数十 MB 数据。结果受设备、浏览器、网络和服务器负载影响；这里测量的是你与本服务器之间的连接。</p>
+    </main>
+    <footer><span>NETPULSE / DOCKER SPEED TEST</span><span>仅用于当前连接诊断</span></footer>
+  </div>
+</body>
+</html>
